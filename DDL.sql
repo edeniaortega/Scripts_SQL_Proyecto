@@ -60,3 +60,23 @@ ADD CONSTRAINT FK_NDF_F FOREIGN KEY(id_factura) REFERENCES negocio.factura(id)
 
 ALTER TABLE negocio.detalle_factura
 ADD CONSTRAINT FK_NDF_S FOREIGN KEY(id_servicio) REFERENCES negocio.servicios(id)
+
+--Cambios Tabla Reservas --
+ALTER TABLE negocio.reservas
+DROP COLUMN numero_reserva;
+
+ALTER TABLE negocio.reservas
+DROP COLUMN fecha_hora_inicio;
+
+ALTER TABLE negocio.reservas
+DROP COLUMN fecha_hora_fin;
+
+ALTER TABLE negocio.reservas
+ADD id_factura INT
+
+ALTER TABLE negocio.reservas
+ADD CONSTRAINT FK_NR_F FOREIGN KEY(id_factura) REFERENCES negocio.factura(id)
+
+ALTER TABLE negocio.reservas
+DROP CONSTRAINT FK_NR_C
+
