@@ -72,7 +72,7 @@ ALTER TABLE negocio.reservas
 DROP COLUMN fecha_hora_fin;
 
 ALTER TABLE negocio.reservas
-ADD id_factura INT
+ADD id_factura INT NOT NULL 
 
 ALTER TABLE negocio.reservas
 ADD CONSTRAINT FK_NR_F FOREIGN KEY(id_factura) REFERENCES negocio.factura(id)

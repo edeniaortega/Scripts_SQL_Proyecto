@@ -88,3 +88,7 @@ INSERT into negocio.detalle_factura(
     , cantidad
     , subtotal
 )values ('1','3',2,30.00)
+
+UPDATE negocio.reservas
+SET id_factura = '1'
+where id = '1'
