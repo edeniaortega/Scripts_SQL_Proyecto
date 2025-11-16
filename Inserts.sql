@@ -53,21 +53,24 @@ INSERT into negocio.servicios (
     descripcion
     , precio_unitario
 )VALUES ( 'renta de pc por hora'
-        , 15.00
-)
+        , 15.00)
+INSERT into negocio.servicios (
+    descripcion
+    , precio_unitario
+)VALUES ( 'fotocopias(por hoja)'
+        , 1.00)
+
+
 
 ---Inserts para Reservas---
 INSERT into negocio.reservas(
     id_cliente
     , id_computadora
-    , numero_reserva
-    , fecha_hora_inicio
-    , fecha_hora_fin
+    , id_factura
 ) VALUES ('1'
         , '1'
-        , 'RES0001'
-        , '2025-01-13 16:00:00'
-        , '2025-01-13 18:00:00'
+        , '1'
+        
 )
 
 --- Inserts para factura ---

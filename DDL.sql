@@ -1,12 +1,12 @@
 CREATE SCHEMA negocio
-
+GO
 CREATE TABLE negocio.clientes (
     id INT IDENTITY(1,1) PRIMARY KEY
     , nombre NVARCHAR(100) NOT NULL
     , apellido NVARCHAR(100) NOT NULL
     , email NVARCHAR(100) 
     , telefono NVARCHAR(100) NOT NULL
-);
+)
 
 CREATE TABLE negocio.computadoras (
     id INT IDENTITY(1,1) PRIMARY KEY
@@ -79,4 +79,13 @@ ADD CONSTRAINT FK_NR_F FOREIGN KEY(id_factura) REFERENCES negocio.factura(id)
 
 ALTER TABLE negocio.reservas
 DROP CONSTRAINT FK_NR_C
+
+
+--Cambios en la Tabla Computadoras --
+ALTER TABLE negocio.computadoras
+ADD CONSTRAINT UQ_NC_PC UNIQUE (numero_pc);
+
+--Cambios en la Tabla Clientes --
+ALTER TABLE negocio.clientes
+ADD CONSTRAINT UQ_NC_C UNIQUE (email);
 
